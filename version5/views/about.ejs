@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My WebPage</title>
+  </head>
+  <body>
+    <h1>This is the About Page, give us the information</h1>
+    <form method="POST" action="/about">
+			  <div>
+			    <label>Your first name</label>
+			    <input type="text" name="first" placeholder="First Name">
+			  </div>
+        <div>
+          <label>Your last name</label>
+          <input type="text" name="last" placeholder="Last Name">
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Email">
+        </div>
+			  <input type="submit" name="Submit">
+			</form>
+
+      <% for(var i = 0; i < DB.length; i++) { %>
+        <ul><h3>Person <%= i+1 %> Data</h3>
+          <li>First Name: <b><%= DB[i].firstName %></li></b>
+          <li>Last Name: <b><%= DB[i].lastName %></li></b>
+          <li>Email: <b><%= DB[i].email %></li></b>
+        </ul>
+      <% } %>
+  </body>
+</html>
