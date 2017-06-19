@@ -19,7 +19,7 @@ and a server running on port 3000
   });
   ```
 
-    3)Last step is to set up the Server.
+  3)Last step is to set up the Server.
 
     ```
     app.listen(3000, function(err){
