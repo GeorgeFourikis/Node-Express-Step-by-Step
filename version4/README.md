@@ -17,5 +17,5 @@ Then, we need to find a way to show what we pass:
 <h1>This is the About Page <em><%= name %></em></h1>
 ```
 
-In EJS, we pass variables by using <% xxxxxxxx %>, in case we want the EJS to give
-a value then we use <%= myVariableGoesHere %>.
+In EJS, we pass variables by using <% aVariable %>, in case we want the EJS to give
+a value to be used and shown then we use <%= myVariableGoesHere %>.
