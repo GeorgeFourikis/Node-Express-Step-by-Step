@@ -7,11 +7,11 @@
 	<h1>User number: <%= parseInt(user) + 1 %></h1>
 	<span>
 	  	Actions: 
-	  		<form action="/about/delete/<%= user %>" method="POST">
+	  		<form action="/about/<%= user %>/delete" method="POST">
     			<input type="submit" value="delete user">
 			</form>
 	</span>	
-	  	<a href="/about/update/<%= user %>">UPDATE</a>
+	  	<a href="/about/<%= user %>/update">UPDATE</a>
 		<li>First Name: <b><%= DB[user].firstName %></b>
 	  	<li>Last Name: <b><%= DB[user].lastName %></b>
 	  	<li>Email: <b><%= DB[user].email %></b>

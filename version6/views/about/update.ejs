@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>This is the Update Page</h1>
-    <form method="POST" action="/about/update/<%= user %>">
+    <form method="POST" action="/about/<%= user %>/update">
 			  <div>
 			    <label>Your first name</label>
 			    <input type="text" name="first" placeholder="First Name" value=<%= DB[user].firstName %>>

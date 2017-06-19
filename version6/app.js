@@ -54,20 +54,20 @@ app.get('/about/:id', function(req, res){
 });
 
 //Delete route - delete user
-app.post('/about/delete/:id', function(req, res){
+app.post('/about/:id/delete', function(req, res){
   var user_id = req.params.id;
   myDB.splice(user_id, 1);
   res.redirect('/about');
 });
 
 //Update route -show update form
-app.get('/about/update/:id', function(req, res){
+app.get('/about/:id/update', function(req, res){
   var user_id = req.params.id;
   res.render('about/update', {user: user_id, DB: myDB});
 });
 
 //Update route post - update the Database info for the user
-app.post('/about/update/:id', function(req, res){
+app.post('/about/:id/update', function(req, res){
   var user_id = req.params.id;
   console.log(typeof(user_id, user_id));
   console.log(typeof(user_id));
