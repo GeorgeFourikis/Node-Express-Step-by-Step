@@ -16,7 +16,9 @@ Third, we initiated an empty array which will imitate a DataBase.
 var myDB = [];
 ```
 
-Fourth, we split up the .about route to a POST and a GET methods.
+Fourth, we split up the /about route to a POST and a GET methods.
+Note that we pass the myDB array named DB as an argument to the 
+render method so we can use it inside our EJS template.
 ```
 app.get('/about', function(req, res){
   res.render('about', { DB: myDB });
