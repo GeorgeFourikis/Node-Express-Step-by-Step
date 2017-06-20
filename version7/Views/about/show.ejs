@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My WebSite</title>
+</head>
+<body>
+	<h1>User number: <%= user %></h1>
+	<span>
+	  	Actions: 
+	  		<form action="/about/<%= user %>/delete" method="POST">
+    			<input type="submit" value="delete user">
+			</form>
+	  	<a href="/about/<%= user %>/update">UPDATE</a>
+	</span>	
+	<li>First Name: <b><%= DB.users[parseInt(user)].firstName %></b>
+	  	<li>Last Name: <b><%= DB.users[parseInt(user)].lastName %></b>
+	  	<li>Email: <b><%= DB.users[parseInt(user)].email %></b>
+	</ul>
+
+	<h3><a href="/about">Or go back to the users page</a></h3>
+</body>
+</html>
