@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My WebSite</title>
+</head>
+<body>
+	<h1>User with ID: <%= user.id %></h1>
+	<span>
+	  	Actions: 
+	  		<form action="/<%= user.id %>/delete" method="POST">
+    			<input type="submit" value="delete user">
+			</form>
+	  	<a href="/<%= user.id %>/update">UPDATE</a>
+	</span>	
+	<li>First Name: <b><%= user.firstName %></b>
+	  	<li>Last Name: <b><%= user.lastName %></b>
+	  	<li>Email: <b><%= user.email %></b>
+	</ul>
+
+	<h3><a href="/">Or go back to the users page</a></h3>
+</body>
+</html>

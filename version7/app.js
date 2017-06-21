@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 app.set('view cache', false);
 
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
+app.use(bodyParser.json())  
 
 
 app.get('/', function(req, res){

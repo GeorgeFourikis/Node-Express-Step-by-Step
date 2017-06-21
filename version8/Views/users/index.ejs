@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My WebPage</title>
+  </head>
+  <body>
+    <h1>This is the About Page, you can see the list of the people that have been added.</h1>
+    <a href="/new">Add one here</a>
+    <% if(DB.length > 0) { %>
+      <% for(var i in DB) { %>
+        <ul><h3>Person with ID: <%= DB[i].id %> Data</h3>
+          <a href="/<%= DB[i].id %>"><button>Show</button></a></li>
+          <li>First Name: <b><%= DB[i].firstName %></b>
+          <li>Last Name: <b><%= DB[i].lastName %></b>
+          <li>Email: <b><%= DB[i].email %></b>
+        </ul>
+
+      <% } %>
+    <% } else { %>
+        <h3>No users found here.Try to add someone.</h3>
+      <% } %>
+  </body>
+</html>
