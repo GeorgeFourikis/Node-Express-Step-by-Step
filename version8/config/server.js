@@ -1,9 +1,15 @@
 var express = require('express');
-var logger = require('morgan');
+var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var fs = require('fs');
+
 var app     = express();
 
-app.use(logger('dev'));
+
+var accessLogStream = fs.createWriteStream(__dirname + '/access.log',{flags: 'a'});
+
+app.use(morgan('combined', {stream: accessLogStream}))
+
 
 app.set('view engine', 'ejs');
 app.set('view cache', false);
