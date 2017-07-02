@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My WebPage</title>
+  </head>
+  <body>
+    <h1>This is the Users Page, you can see the list of the people that have been added.</h1>
+    <a href="/logout">Logout</a>
+    <a href="/api/new">Add one here</a>
+    <% if(students.length > 0) { %>
+      <% for(var i in students) { %>
+        <ul><h3>Person with ID: <%= students[i].id %> Data</h3>
+          <a href="/api/<%= students[i].id %>"><button>Show</button></a></li>
+          <li>First Name: <b><%= students[i].firstName %></b>
+          <li>Last Name: <b><%= students[i].lastName %></b>
+          <li>Email: <b><%= students[i].email %></b>
+        </ul>
+
+      <% } %>
+    <% } else { %>
+        <h3>No users found here.Try to add someone.</h3>
+      <% } %>
+  </body>
+</html>

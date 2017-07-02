@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+</head>
+<body>
+<div class="container">
+
+    <div>
+        <h1><span></span> Profile Page</h1>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <h3>Local</h3>
+
+    <% if (user.email) { %>
+        <p>
+            <strong>id</strong>: <%= user._id %><br>
+            <strong>email</strong>: <%= user.email %><br>
+            <strong>password</strong>: <%= user.password %>
+        </p>
+        <h1><a href="/api">You want to add your students? Access the API</a></h1>
+    <% }%>
+</body>
+</html>
