@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
 
 var studentSchema = new Schema({
     firstName:     {
@@ -10,8 +10,8 @@ var studentSchema = new Schema({
                 type: String,
                 required: 'Password is required',
                 },
-	email:	{ 
-		        type:String, 
+	email:	{
+		        type:String,
                 required:true
 			},
     user: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
