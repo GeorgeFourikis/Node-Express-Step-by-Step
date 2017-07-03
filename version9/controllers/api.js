@@ -15,9 +15,7 @@ router.get('/', function(req, res){
 			console.log(req.user, req.user._id)
 
 	Students.find({user: req.user._id}, (err, students)=>{
-		console.log("STUDENTS HERE============================" + students)
 		User.find({}, function(err, user){
-			console.log("USERS HERE============================" + user)
 	    if(err){
 	      console.log(err)
 	    }else{
@@ -44,7 +42,6 @@ router.post('/new', (req, res)=>{
       console.log(err)
     }else{
       User.update(req.session.user_id, {$push: {students: record._id}}, (err, userUpdate)=>{
-      	console.log(userUpdate, userUpdate._id)
       	res.redirect('/api')
       })
     }
@@ -96,7 +93,6 @@ router.post('/:id/update', function(req, res){
 		if(err) {
 			console.log(err)
 		}else{
-			console.log(student)
 			res.redirect('/api/' + student_id)
 		}
 	})
