@@ -29,7 +29,7 @@ router.post('/new', function(req, res){
     firstName: req.body.first,
     lastName: req.body.last,
     email: req.body.email
-  };
+  }
   Users.create(newUser, function(err, record){
     if(err){
       console.log(err);
@@ -48,20 +48,20 @@ router.get('/:id', function(req, res){
       console.log(err);
     }else{
       res.render('users/show', { user: user });
-    }  
+    }
   });
 });
 
 //Delete route - delete user
 router.post('/:id/delete', function(req, res){
   var user_id = req.params.id;
-  Users.remove({_id: user_id}, function(err, deleted){
+    Users.remove({_id: user_id}, function(err, deleted){
     if(err){
       console.log(err);
     }else{
-      console.log(deleted);
+      console.log(deleted.result);
       res.redirect('/');
-    }  
+    }
   });
 });
 
@@ -73,19 +73,20 @@ router.get('/:id/update', function(req, res){
       console.log(err);
     }else{
       res.render('users/update', { user: user });
-    }  
+    }
   });
 });
 
 //Update route post - update the Database info for the user
 router.post('/:id/update', function(req, res){
   var user_id = req.params.id;
-  Users.findOne({_id: user_id}, function(err, user){
-    user.firstName = req.body.first;
-    user.lastName  = req.body.last;
-    user.email     = req.body.email;
+  Users.findOneAndUpdate({_id: user_id},
+    {$set: { firstName : req.body.first,
+      lastName  : req.body.last,
+      email     : req.body.email
+    }}, function(err, user){
+      console.log(user);
 
-    user.save();
   })
   res.redirect('/' + user_id);
 });

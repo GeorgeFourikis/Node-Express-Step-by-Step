@@ -10,12 +10,10 @@ var userSchema = new Schema({
                 type: String,
                 required: 'Password is required',
                 },
-	email:	{ 
-		type:String, required:true
+	  email:	{
+		        type:String, required:true
 			}
 })
 
 
 mongoose.model("Users", userSchema)
-
-
